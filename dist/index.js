@@ -1,2 +1,3 @@
 "use strict";
-console.log(1);
+let name = 'jack';
+console.log('name: ', name);

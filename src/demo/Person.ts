@@ -7,10 +7,10 @@ class Person {
 	public name: string
 	public age: number = 20
 	public hobby: string[] = ['playing', 'running']
-	// constructor(name: string, age: number) {
-	// 	this.name = name
-	// 	this.age = age
-	// }
+	constructor(name: string, age: number) {
+		this.name = name
+		this.age = age
+	}
 	// 类方法
 	// 存放在原型对象上
 	public eat(who: string) {
@@ -18,11 +18,13 @@ class Person {
 	}
 }
 
-const p = new Person()
-const p2 = new Person()
+const p = new Person('jack', 24)
+const p2 = new Person('tom', 25)
 p.name = 'jack'
 // console.log(p.hobby) // [ 'playing', 'running' ]
 // console.log(p.hobby === p2.hobby) // false
 // console.log(p.eat === p2.eat) // true
 console.log(p)
 console.log(p2)
+
+export {}
