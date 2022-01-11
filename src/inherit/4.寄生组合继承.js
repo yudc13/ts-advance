@@ -6,8 +6,12 @@ function _extends(superType, subType) {
 	function Fn() {
 		this.constructor = subType
 	}
-	Fn.prototype = superType.prototype
-	return new Fn()
+	if (superType !== null) {
+		Fn.prototype = superType.prototype
+		subType.prototype = new Fn()
+	} else {
+		Fn.prototype = Object.create(superType)
+	}
 }
 
 function Parent(name) {
@@ -20,7 +24,7 @@ function Son(name, age) {
 	this.age = age
 }
 
-Son.prototype = _extends(Parent, Son)
+_extends(Parent, Son)
 
 Parent.prototype.play = function () {}
 
