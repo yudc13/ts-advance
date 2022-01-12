@@ -15,6 +15,7 @@ class Vechile {
 
 	// 计算租金
 	public calculateRent() {
+		console.log(`品牌：${this.brand} 车牌号是：${this.vechileNo} 开始被租用`)
 		return 0
 	}
 
@@ -51,10 +52,14 @@ class Car extends Vechile {
 
 	// 计算租金
 	public calculateRent() {
-		return this.getPriceByType() * this.days
+		// 这里的super指定是父类的 _super.prototype.calculateRent.call(this);
+		super.calculateRent()
+		return (this.total = this.getPriceByType() * this.days)
 	}
 }
 
 const baoma = new Car('宝马', 'bmw', 4, 5000, '宝马')
 
 console.log(baoma.calculateRent())
+
+export {}
