@@ -53,6 +53,7 @@ class Car extends Vechile {
 	// 计算租金
 	public calculateRent() {
 		// 这里的super指定是父类的 _super.prototype.calculateRent.call(this);
+		// *** super 只能访问父类的方法 不能访问父类属性 ***
 		super.calculateRent()
 		return (this.total = this.getPriceByType() * this.days)
 	}
